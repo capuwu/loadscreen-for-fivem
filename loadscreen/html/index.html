@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="background">
+        </div>
+        <div id="logo">
+            <div id="log" class="log">Error initializing log</div>
+            <div id="debug" class="log log-top-right"></div>
+            <div class="loading-container">
+                <div class ="loading-labels">
+                    <div id="INIT_BEFORE_MAP_LOADED-label" class="color-first">Pre-Map</div>
+                    <div id="MAP-label" class="color-second">Map</div>
+                    <div id="INIT_AFTER_MAP_LOADED-label" class="color-third">Post-Map</div>
+                    <div id="INIT_SESSION-label" class="color-fourth">Session</div>
+                </div>
+                <div class="loading-bar-container">
+                    <div id="INIT_BEFORE_MAP_LOADED-bar" class="loading-bar bgcolor-first"></div>
+                    <div id="MAP-bar" class="loading-bar bgcolor-second"></div>
+                    <div id="INIT_AFTER_MAP_LOADED-bar" class="loading-bar bgcolor-third"></div>
+                    <div id="INIT_SESSION-bar" class="loading-bar bgcolor-fourth"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text1">
+           <h3>Click space to pause/play music</h3> 
+        </div>
+
+       <div class="text2">
+           <h2>Neverness Roleplay</h2>
+       </div>
+        
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+
+        <!--audio -->
+        <audio id="player" controls="controls" loop="loop" autoplay="autoplay" hidden="hidden">
+            <source src="music.mp3" type="audio/mp3">
+            <script>
+                var play = true;
+                var myAudio = document.getElementById("player");
+
+                myAudio.volume = 0.1;
+
+                function onKeyDown(event) {
+                    switch (event.keyCode) {
+                        case 32: //SpaceBar                    
+                            if (play) {
+                                myAudio.pause();
+                                play = false;
+                            } else {
+                                myAudio.play();
+                                play = true;
+                            }
+                            break;
+                    }
+                    return false;
+                }
+                window.addEventListener("keydown", onKeyDown, false);
+            </script>
+        </audio>
+
+    
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="music.js"></script>
+
+</body>
+</html>
